@@ -9,7 +9,7 @@ Pedro O. Rechi
 This is a web development practice in Astro, in which we consume the pokeapi api to display a list of pokemon.
 Check out the project on [Netlify](https://statuesque-yeot-89630f.netlify.app/pokemons/1/).
 
->[!NOTE] Do you want to do this practice too? You can do it by following the course on Fernando Herrera (@Klerith)'s page, [devTalles](https://cursos.devtalles.com/).
+> [!NOTE] Do you want to do this practice too? You can do it by following the course on Fernando Herrera (@Klerith)'s page, [devTalles](https://cursos.devtalles.com/).
 
 ## 🚀 Project Structure
 
