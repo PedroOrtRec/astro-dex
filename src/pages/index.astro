@@ -2,6 +2,8 @@
 import MainLayout from "@layouts/MainLayout.astro";
 import type { PokemonListResponse } from "@interfaces/pokemon-list.response";
 import PokemonCard from "@components/pokemons/PokemonCard.astro";
+import Title from "@components/shared/Title.astro";
+import { Counter } from "@components/Counter";
 
 const res = await fetch("https://pokeapi.co/api/v2/pokemon");
 const data = (await res.json()) as PokemonListResponse;
@@ -9,11 +11,13 @@ const data = (await res.json()) as PokemonListResponse;
 console.log("🚀 ~ data:", data);
 
 const title = "Astro Pokedex";
+
+
+// const counterValue = 30;
 ---
 
 <MainLayout title={title}>
-  <h1 class="text-3xl">Listado de Pókemons</h1>
-  <hr />
+  <Title>Listado</Title>
   <section
     aria-label="Listado de Pókemons"
     class="grid grid-cols-1 sm:grid-cols-4 md:grid-cols-5 gap-4 mt-5"
@@ -24,4 +28,9 @@ const title = "Astro Pokedex";
       ))
     }
   </section>
+  <!-- <Counter
+        client:only="solid-js"
+        initValue={counterValue}
+        transition:persist="counter"
+        /> -->
 </MainLayout>

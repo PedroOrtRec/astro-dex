@@ -14,21 +14,25 @@ const id = url.split("/").at(-2);
   <article
     class:list={[
       "rounded flex flex-col justify-center items-center p-2",
-      { border: !isBig },
+      { border: !isBig }, {  "hover:text-blue-500 hover:border-blue-500": !isBig},
     ]}
   >
     <!-- <div class="relative"> -->
     <!-- {isBig && <span class="absolute inset-0 bg-cover blur-md -z-[1]" style={`background-image: url('https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png');`} />} -->
     <img
       transition:name={`${name}-image`}
+      transition:animate="fade"
       src=`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`
       alt={name}
       class:list={[{ "w-22 h-22": !isBig }, { "w-26 h-26 imageShadow": isBig }]}
     />
     <!-- </div> -->
+     <div class:list={["flex", {"gap-3": isBig}, {"gap-1": !isBig}]}>
+     <span class:list={["", { "text-4xl text-blue-300 rotate-[-8deg] scale-125 translate-y-1 font-bold": isBig }]}>#{id}</span>
     <span class:list={["capitalize", { "text-4xl text-blue-300": isBig }]}
-      >#{id} {name}</span
+      >{name}</span
     >
+  </div>
   </article>
 </a>
 
